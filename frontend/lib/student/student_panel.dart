@@ -11,12 +11,12 @@ class StudentPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PanelScaffold(
+    return const PanelScaffold(
       title: 'Student',
       tabs: [
-        ('My Complaints', Icons.list_alt_outlined, const _MyComplaintsTab()),
-        ('New Complaint', Icons.add_circle_outline, const _NewComplaintTab()),
-        ('Notifications', Icons.notifications_outlined, const _NotificationsTab()),
+        ('My Complaints', Icons.list_alt_outlined, _MyComplaintsTab()),
+        ('New Complaint', Icons.add_circle_outline, _NewComplaintTab()),
+        ('Notifications', Icons.notifications_outlined, _NotificationsTab()),
       ],
     );
   }
@@ -514,7 +514,7 @@ class _NewComplaintTabState extends State<_NewComplaintTab> {
                             labelText: 'Category',
                             border: OutlineInputBorder(),
                           ),
-                          value: _selectedCategoryId,
+                          initialValue: _selectedCategoryId,
                           items: _categories.map((c) {
                             final m = c as Map;
                             final id = _idOf(m).isNotEmpty ? _idOf(m) : (m['name']?.toString() ?? '');

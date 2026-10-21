@@ -1,0 +1,9 @@
+[build]
+  # Yeh batata hai ke code 'frontend' folder ke andar hai
+  base = "frontend"
+
+  # Yeh command Netlify ke server par Flutter SDK download karke web build kar degi
+  command = "git clone https://github.com/flutter/flutter.git -b stable --depth 1 ../flutter && export PATH=\"$PATH:../flutter/bin\" && flutter pub get && flutter build web --release"
+
+  # Yeh build hone ke baad final files ka folder hai
+  publish = "build/web"
